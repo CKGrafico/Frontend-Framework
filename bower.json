@@ -12,6 +12,9 @@
 		"jquery": {
 			"main": "jquery.js"
 		},
+		"sizzle": {
+			"ignore": true
+		},
 		"handlebars": {
 			"main": "handlebars.js"
 		},
