@@ -1,0 +1,22 @@
+{
+	"dependencies": {
+		"gulp": "*",
+		"gulp-load-plugins": "*"
+	},
+
+	"devDependencies": {
+		"gulp-bower-files": "*",
+		"gulp-concat": "*",
+		"gulp-declare": "*",
+		"gulp-handlebars": "*",
+		"gulp-htmlbuild": "*",
+		"gulp-imagemin": "*",
+		"gulp-inject": "*",
+		"gulp-minify-css": "*",
+		"gulp-sass": "*",
+		"gulp-ttf2eot": "*",
+		"gulp-ttf2woff": "*",
+		"gulp-uglify": "*",
+		"gulp-util": "*"
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"name": "app",
+
+	"dependencies": {
+		"handlebars": "*",
+		"jquery": ">= 1.8.3",
+		"modernizr": "*",
+		"selectivizr": "*"
+	},
+
+	"overrides": {
+		"jquery": {
+			"main": "jquery.js"
+		},
+		"handlebars": {
+			"main": "handlebars.js"
+		},
+		"modernizr": {
+			"main": "modernizr.js"
+		},
+		"selectivizr": {
+			"main": "selectivizr.js"
+		}
+	}
+}
