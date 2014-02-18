@@ -15,6 +15,7 @@
 		"gulp-minify-css": "*",
 		"gulp-rename": "*",
 		"gulp-sass": "*",
+		"gulp-svg2ttf": "*",
 		"gulp-ttf2eot": "*",
 		"gulp-ttf2woff": "*",
 		"gulp-uglify": "*",

@@ -16,6 +16,7 @@ var paths = {
 	build: './build/',
 	css: './css',
 	cssBuild: './build/css/',
+	fonts: './fonts/',
 	fontsBuild: './build/fonts/',
 	imagesBuild: './build/images/',
 	js: './js/',
@@ -57,6 +58,11 @@ gulp.task('css', function(){
 
 // create fonts
 gulp.task('fonts', function(){
+
+	gulp.src(files.fontsSVG)
+		.pipe(plugins.svg2ttf())
+		.pipe(gulp.dest(paths.fonts));
+
 	gulp.src(files.fontsTTF)
 		.pipe(plugins.ttf2woff())
 		.pipe(gulp.dest(paths.fontsBuild));
@@ -70,12 +76,14 @@ gulp.task('fonts', function(){
 
 	gulp.src(files.fontsSVG)
 		.pipe(gulp.dest(paths.fontsBuild));
+
+
 });
 
 // improve images
 gulp.task('images', function() {
 	gulp.src(files.images)
-        .pipe(imagemin())
+        .pipe(plugins.imagemin())
         .pipe(gulp.dest(paths.imagesBuild));
 });
 
@@ -90,13 +98,6 @@ gulp.task('htmlbuild', function(){
 					.pipe(plugins.uglify())
 					.pipe(gulp.dest(paths.jsBuild));
 				callback(null, [ 'js/all.min.js' ]);
-			},
-
-			css: function (files, callback) {
-				gulp.src(files)
-					.pipe(plugins.concat('styles.css'))
-					.pipe(gulp.dest(paths.cssBuild));
-				callback(null, [ 'css/styles.css' ]);
 			}
 		}))
 		.pipe(gulp.dest(paths.build));
