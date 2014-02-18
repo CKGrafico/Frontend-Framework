@@ -13,6 +13,7 @@
 		"gulp-imagemin": "*",
 		"gulp-inject": "*",
 		"gulp-minify-css": "*",
+		"gulp-rename": "*",
 		"gulp-sass": "*",
 		"gulp-ttf2eot": "*",
 		"gulp-ttf2woff": "*",

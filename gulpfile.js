@@ -105,7 +105,7 @@ gulp.task('htmlbuild', function(){
 // build humans.txt
 gulp.task('humans', function() {
 	gulp.src('./humans.md')
-    .pipe(rename('humans.txt'))
+    .pipe(plugins.rename('humans.txt'))
     .pipe(gulp.dest(paths.build));
 });
 
