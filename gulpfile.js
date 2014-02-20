@@ -58,7 +58,10 @@ gulp.task('css', function(){
 
 // create fonts
 gulp.task('fonts', function(){
-
+	/*
+	 *TODO: Fix it
+	 */
+	/*
 	gulp.src(files.fontsSVG)
 		.pipe(plugins.svg2ttf())
 		.pipe(gulp.dest(paths.fonts));
@@ -76,7 +79,7 @@ gulp.task('fonts', function(){
 
 	gulp.src(files.fontsSVG)
 		.pipe(gulp.dest(paths.fontsBuild));
-
+	*/
 
 });
 

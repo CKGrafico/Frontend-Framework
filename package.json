@@ -1,24 +1,55 @@
 {
-	"dependencies": {
-	},
-
-	"devDependencies": {
+  "name": "Frontend-Framework",
+  "description": "![HTML5](http://i.imgur.com/U5n4vLn.png)",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
     "gulp": "*",
     "gulp-load-plugins": "*",
-		"gulp-bower-files": "*",
-		"gulp-concat": "*",
-		"gulp-declare": "*",
-		"gulp-handlebars": "*",
-		"gulp-htmlbuild": "*",
-		"gulp-imagemin": "*",
-		"gulp-inject": "*",
-		"gulp-minify-css": "*",
-		"gulp-rename": "*",
-		"gulp-sass": "*",
-		"gulp-svg2ttf": "*",
-		"gulp-ttf2eot": "*",
-		"gulp-ttf2woff": "*",
-		"gulp-uglify": "*",
-		"gulp-util": "*"
-	}
+    "gulp-bower-files": "*",
+    "gulp-concat": "*",
+    "gulp-declare": "*",
+    "gulp-handlebars": "*",
+    "gulp-htmlbuild": "*",
+    "gulp-imagemin": "*",
+    "gulp-inject": "*",
+    "gulp-minify-css": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*"
+  },
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CKGrafico/Frontend-Framework.git"
+  },
+  "keywords": [
+    "frontend",
+    "framework",
+    "css",
+    "sass",
+    "javascript",
+    "html",
+    "bower",
+    "gulp"
+  ],
+  "author": {
+    "name" : "Quique Fernandez",
+    "url" : "http://twitter.com/CKGrafico"
+  },
+  "contributors": [ 
+    {
+      "name": "Jorge del Casar",
+      "url" : "http://twitter.com/JorgeCasar"
+    } 
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CKGrafico/Frontend-Framework/issues"
+  },
+  "homepage": "https://github.com/CKGrafico/Frontend-Framework"
 }
