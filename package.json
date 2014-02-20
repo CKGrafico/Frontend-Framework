@@ -1,10 +1,10 @@
 {
 	"dependencies": {
-		"gulp": "*",
-		"gulp-load-plugins": "*"
 	},
 
 	"devDependencies": {
+    "gulp": "*",
+    "gulp-load-plugins": "*",
 		"gulp-bower-files": "*",
 		"gulp-concat": "*",
 		"gulp-declare": "*",
