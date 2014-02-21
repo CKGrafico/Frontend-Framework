@@ -144,5 +144,5 @@ gulp.task('watch', function () {
 	gulp.watch(files.templates, ['handlebars']);
 });
 
-gulp.task('default', ['sass', 'handlebars', 'inject', 'watch']);
+gulp.task('default', ['sass', 'handlebars', 'inject']);
 gulp.task('build', ['clean', 'default', 'fonts', 'images', 'humans', 'usemin']);
