@@ -15,8 +15,12 @@
 	<meta name="MobileOptimized" content="320">
 
 	<!-- CSS Para todos los navegadores -->
+	<!-- build:css css/styles.min.css -->
 	<!-- inject:css -->
+	<link rel="stylesheet" href="/css/debug.css">
+	<link rel="stylesheet" href="/css/style.css">
 	<!-- endinject -->
+	<!-- endbuild -->
 
 	<!--[if (lt IE 9) & (!IEMobile)]>
 	<script src="js/vendor/selectivizr-min.js"></script>
@@ -49,8 +53,11 @@
 <body>
 
 	<!-- JavaScript -->
-	<!-- htmlbuild:js -->
+	<!-- build:js js/scripts.min.js -->
 	<!-- inject:js -->
+	<script src="/js/vendor/handlebars/handlebars.js"></script>
+	<script src="/js/vendor/modernizr/modernizr.js"></script>
+	<script src="/js/vendor/selectivizr/selectivizr.js"></script>
 	<!-- endinject -->
 	<!-- endbuild  -->
 

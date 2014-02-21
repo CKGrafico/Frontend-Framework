@@ -17,7 +17,11 @@
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-uglify": "*",
-    "gulp-util": "*"
+    "gulp-util": "*",
+    "gulp-usemin": "~0.3.2",
+    "gulp-minify-html": "~0.1.0",
+    "gulp-rev": "~0.2.1",
+    "gulp-clean": "~0.2.4"
   },
   "main": "gulpfile.js",
   "scripts": {
@@ -38,14 +42,14 @@
     "gulp"
   ],
   "author": {
-    "name" : "Quique Fernandez",
-    "url" : "http://twitter.com/CKGrafico"
+    "name": "Quique Fernandez",
+    "url": "http://twitter.com/CKGrafico"
   },
-  "contributors": [ 
+  "contributors": [
     {
       "name": "Jorge del Casar",
-      "url" : "http://twitter.com/JorgeCasar"
-    } 
+      "url": "http://twitter.com/JorgeCasar"
+    }
   ],
   "license": "MIT",
   "bugs": {
