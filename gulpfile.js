@@ -57,9 +57,15 @@ gulp.task('css', function(){
 		.pipe(gulp.dest(paths.cssBuild));
 });
 
-gulp.task('clean', function() {
+// Clean build path
+gulp.task('cleanBuild', function() {
 	return gulp.src(paths.build, {read: false})
-		.pipe(plugins.clean());
+		.pipe(plugins.clean())
+		.pipe(gulp.dest('./'))
+		.on('end', function(){
+			console.log(plugins)
+			plugins.runSequence(['default', 'fonts', 'images', 'humans', 'usemin']);
+		});
 });
 
 // create fonts
@@ -97,21 +103,6 @@ gulp.task('images', function() {
 });
 
 // Build html
-// Deprecated: replaced by usemin
-gulp.task('htmlbuild', function(){
-	return gulp.src(files.index)
-		.pipe(plugins.htmlbuild({
-			js: function (files, callback) {
-				gulp.src(files)
-					.pipe(plugins.concat('all.min.js'))
-					.pipe(plugins.uglify())
-					.pipe(gulp.dest(paths.jsBuild));
-				callback(null, [ 'js/all.min.js' ]);
-			}
-		}))
-		.pipe(gulp.dest(paths.build));
-});
-
 gulp.task('usemin', function() {
 	return gulp.src(files.index)
 		.pipe(plugins.usemin(
@@ -145,4 +136,4 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', ['sass', 'handlebars', 'inject']);
-gulp.task('build', ['clean', 'default', 'fonts', 'images', 'humans', 'usemin']);
+gulp.task('build', ['cleanBuild']);
