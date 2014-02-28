@@ -75,8 +75,13 @@ gulp.task('fonts', function(){
 
 	gulp.src(files.fontsSVG)
 		.pipe(plugins.svg2ttf())
-		.pipe(gulp.dest(paths.fonts));
+		.pipe(gulp.dest(paths.fonts))
+		.on('end', function(){
+			plugins.runSequence(['fontsOthers']);
+		});
+});
 
+gulp.task('fontsOthers', function(){
 	gulp.src(files.fontsTTF)
 		.pipe(plugins.ttf2woff())
 		.pipe(gulp.dest(paths.fontsBuild));
@@ -90,8 +95,6 @@ gulp.task('fonts', function(){
 
 	gulp.src(files.fontsSVG)
 		.pipe(gulp.dest(paths.fontsBuild));
-
-
 });
 
 // improve images
