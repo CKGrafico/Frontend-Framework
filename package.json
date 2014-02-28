@@ -5,6 +5,7 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "*",
+    "gulp-clean": "~0.2.4",
     "gulp-load-plugins": "*",
     "gulp-bower-files": "*",
     "gulp-concat": "*",
@@ -14,15 +15,17 @@
     "gulp-imagemin": "*",
     "gulp-inject": "*",
     "gulp-minify-css": "*",
+    "gulp-minify-html": "~0.1.0",
     "gulp-rename": "*",
+    "gulp-rev": "~0.2.1",
     "gulp-run-sequence": "*",
     "gulp-sass": "*",
+    "gulp-svg2ttf": "*",
+    "gulp-ttf2woff": "*",
+    "gulp-ttf2eot": "*",
     "gulp-uglify": "*",
     "gulp-util": "*",
-    "gulp-usemin": "~0.3.2",
-    "gulp-minify-html": "~0.1.0",
-    "gulp-rev": "~0.2.1",
-    "gulp-clean": "~0.2.4"
+    "gulp-usemin": "~0.3.2"
   },
   "main": "gulpfile.js",
   "scripts": {

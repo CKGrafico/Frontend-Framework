@@ -63,8 +63,7 @@ gulp.task('cleanBuild', function() {
 		.pipe(plugins.clean())
 		.pipe(gulp.dest('./'))
 		.on('end', function(){
-			console.log(plugins)
-			plugins.runSequence(['default', 'fonts', 'images', 'humans', 'usemin']);
+			plugins.runSequence(buildSequence);
 		});
 });
 
@@ -73,7 +72,7 @@ gulp.task('fonts', function(){
 	/*
 	 *TODO: Fix it
 	 */
-	/*
+
 	gulp.src(files.fontsSVG)
 		.pipe(plugins.svg2ttf())
 		.pipe(gulp.dest(paths.fonts));
@@ -91,7 +90,7 @@ gulp.task('fonts', function(){
 
 	gulp.src(files.fontsSVG)
 		.pipe(gulp.dest(paths.fontsBuild));
-	*/
+
 
 });
 
@@ -137,3 +136,4 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['sass', 'handlebars', 'inject']);
 gulp.task('build', ['cleanBuild']);
+var buildSequence = ['default', 'fonts', 'images', 'humans', 'usemin', 'fonts'];
