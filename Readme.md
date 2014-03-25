@@ -1,5 +1,1 @@
-![HTML5](http://i.imgur.com/U5n4vLn.png)
-
-TODO:
-- Improve selectivizr :S
-- Test fonts and images
+Special branch for [Cordova-BaseProject-Multiplatform](https://github.com/CKGrafico/Cordova-BaseProject-Multiplatform)

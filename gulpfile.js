@@ -13,14 +13,14 @@ var files = {
 };
 
 var paths = {
-	build: './build',
+	build: '../www',
 	css: './css',
-	cssBuild: './build/css',
+	cssBuild: '../www/css',
 	fonts: './fonts',
-	fontsBuild: './build/fonts',
-	imagesBuild: './build/images',
+	fontsBuild: '../www/fonts',
+	imagesBuild: '../www/images',
 	js: './js',
-	jsBuild: './build/js',
+	jsBuild: '../www/js',
 	lib: './js/vendor'
 };
 
