@@ -2,7 +2,7 @@
 	"name": "app",
 
 	"dependencies": {
-		"intel-appframework": "2.1.0",
+		"intel-appframework": "2.1.0"
 	},
 
 	"overrides": {
