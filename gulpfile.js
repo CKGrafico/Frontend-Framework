@@ -61,7 +61,7 @@ gulp.task('css', function(){
 gulp.task('cleanBuild', function() {
 	return gulp.src(paths.build, {read: false})
 		.pipe(plugins.clean())
-		.pipe(gulp.dest('./'))
+		.pipe(gulp.dest('../')) //important for cordova branch
 		.on('end', function(){
 			plugins.runSequence(buildSequence);
 		});
