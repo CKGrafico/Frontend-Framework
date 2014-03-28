@@ -117,13 +117,6 @@ gulp.task('usemin', function() {
 		.pipe(gulp.dest(paths.build));
 });
 
-// build humans.txt
-gulp.task('humans', function() {
-	return gulp.src('./humans.md')
-		.pipe(plugins.rename('humans.txt'))
-		.pipe(gulp.dest(paths.build));
-});
-
 // Initialize project
 gulp.task('initialize', function() {
 	return plugins.bowerFiles()
@@ -139,4 +132,4 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['sass', 'handlebars', 'inject']);
 gulp.task('build', ['cleanBuild']);
-var buildSequence = ['default', 'fonts', 'images', 'humans', 'usemin', 'fonts'];
+var buildSequence = ['default', 'fonts', 'images', 'usemin', 'fonts'];
