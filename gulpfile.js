@@ -2,18 +2,22 @@ var gulp = require('gulp');
 var plugins = require("gulp-load-plugins")();
 
 var files = {
+	includecss: './css/include/*.css',
 	css: './css/*.css',
 	fontsTTF: './fonts/*.ttf',
 	fontsSVG: './fonts/*.svg',
 	images: './images/**/*.*',
 	index: './index.html',
-	js: './js/**/*.js',
+	includejs: './js/include/**/*.js',
+	alljs: './js/**/*.js',
+	js: './js/*.js',
 	scss: './scss/*.scss',
 	templates: './templates/*.hbs',
 };
 
 var paths = {
 	build: '../www',
+	includecss: './css/include',
 	css: './css',
 	cssBuild: '../www/css',
 	fonts: './fonts',
@@ -21,14 +25,14 @@ var paths = {
 	imagesBuild: '../www/images',
 	js: './js',
 	jsBuild: '../www/js',
-	lib: './js/vendor'
+	lib: './js/include/vendor'
 };
 
 // Compile Sass
 gulp.task('sass', function(){
 	return gulp.src(files.scss)
 		.pipe(plugins.sass())
-		.pipe(gulp.dest(paths.css));
+		.pipe(gulp.dest(paths.includecss));
 });
 
 // Handlebars templates
@@ -44,24 +48,16 @@ gulp.task('handlebars', function(){
 
 // Inject JS & CSS Files
 gulp.task('inject', function() {
-	return gulp.src([files.js, files.css], {read: false})
+	return gulp.src([files.includejs, files.includecss], {read: false})
 		.pipe(plugins.inject(files.index))
 		.pipe(gulp.dest('./'));
-});
-
-// Minify css
-// Deprecated: usemin do it
-gulp.task('css', function(){
-	return gulp.src(files.css)
-		.pipe(plugins.minifyCss())
-		.pipe(gulp.dest(paths.cssBuild));
 });
 
 // Clean build path
 gulp.task('cleanBuild', function() {
 	return gulp.src(paths.build, {read: false})
 		.pipe(plugins.clean())
-		.pipe(gulp.dest('../')) //important for cordova branch
+		.pipe(gulp.dest('../'))
 		.on('end', function(){
 			plugins.runSequence(buildSequence);
 		});
@@ -106,6 +102,14 @@ gulp.task('images', function() {
 
 // Build html
 gulp.task('usemin', function() {
+	gulp.src(files.js)
+		.pipe(plugins.uglify())
+		.pipe(gulp.dest(paths.jsBuild));
+
+	gulp.src(files.css)
+		.pipe(plugins.minifyCss())
+		.pipe(gulp.dest(paths.cssBuild));
+
 	return gulp.src(files.index)
 		.pipe(plugins.usemin(
 			{
@@ -117,6 +121,13 @@ gulp.task('usemin', function() {
 		.pipe(gulp.dest(paths.build));
 });
 
+// build humans.txt
+gulp.task('humans', function() {
+	return gulp.src('./humans.md')
+		.pipe(plugins.rename('humans.txt'))
+		.pipe(gulp.dest(paths.build));
+});
+
 // Initialize project
 gulp.task('initialize', function() {
 	return plugins.bowerFiles()
@@ -125,11 +136,11 @@ gulp.task('initialize', function() {
 
 // Init watch
 gulp.task('watch', function () {
-	gulp.watch(files.js, ['inject']);
+	gulp.watch(files.alljs, ['inject']);
 	gulp.watch(files.scss, ['sass', 'inject']);
 	gulp.watch(files.templates, ['handlebars']);
 });
 
 gulp.task('default', ['sass', 'handlebars', 'inject']);
 gulp.task('build', ['cleanBuild']);
-var buildSequence = ['default', 'fonts', 'images', 'usemin', 'fonts'];
+var buildSequence = ['default', 'fonts', 'images', 'humans', 'usemin', 'fonts'];
